@@ -58,7 +58,7 @@ Este é um guardrail obrigatório e crítico. Execute com máximo rigor:
 1. **Cross-Reference de Versões:**
    - Para CADA tecnologia mencionada no lab, verifique se a versão corresponde EXATAMENTE à versão latest informada no briefing de pesquisa
    - Se houver discrepância, marque como **CRÍTICO** e REPROVE o lab
-   - Não aceite versões genéricas como "latest" ou "stable" sem número específico
+   - Não aceite versões genéricas como "latest" ou "stable" sem número específico na tabela de metadados e documentação do lab
 
 2. **Detecção de Depreciações:**
    - Busque no lab por termos como: "deprecated", "descontinuado", "removido", "legacy", "antigo"

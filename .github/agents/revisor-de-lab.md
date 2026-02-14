@@ -32,12 +32,14 @@ Verifique cada item:
 
 **Passo 3: Validação Técnica**
 Verifique cada item:
-- [ ] As versões mencionadas são as LATEST conforme o briefing de pesquisa?
-- [ ] Os comandos CLI estão atualizados e corretos?
-- [ ] Não há menção a features depreciadas ou removidas?
-- [ ] As referências apontam para documentação oficial e atual?
+- [ ] **CRÍTICO:** Todas as versões de tecnologias mencionadas no lab são as LATEST conforme o briefing de pesquisa?
+- [ ] **CRÍTICO:** Não há menção a features depreciadas, removidas ou marcadas como obsoletas?
+- [ ] **CRÍTICO:** Nenhuma versão antiga, EOL (End of Life) ou não-suportada está sendo usada?
+- [ ] Os comandos CLI estão atualizados e corretos para as versões latest?
+- [ ] As referências apontam para documentação oficial e atual (não versões antigas)?
 - [ ] Os resultados esperados são realistas para os comandos apresentados?
 - [ ] As configurações e parâmetros estão corretos para as versões indicadas?
+- [ ] APIs, flags e sintaxe estão de acordo com as versões latest (não usam sintaxe antiga)?
 
 **Passo 4: Validação Didática**
 Verifique cada item:
@@ -50,7 +52,33 @@ Verifique cada item:
 - [ ] A seção de limpeza/cleanup está completa?
 - [ ] Os próximos passos sugeridos são relevantes?
 
-**Passo 5: Geração do Relatório**
+**Passo 5: Validação de Versões e Depreciações (GUARDRAIL CRÍTICO)**
+Este é um guardrail obrigatório e crítico. Execute com máximo rigor:
+
+1. **Cross-Reference de Versões:**
+   - Para CADA tecnologia mencionada no lab, verifique se a versão corresponde EXATAMENTE à versão latest informada no briefing de pesquisa
+   - Se houver discrepância, marque como **CRÍTICO** e REPROVE o lab
+   - Não aceite versões genéricas como "latest" ou "stable" sem número específico
+
+2. **Detecção de Depreciações:**
+   - Busque no lab por termos como: "deprecated", "descontinuado", "removido", "legacy", "antigo"
+   - Verifique se comandos, flags, APIs ou configurações usam sintaxe antiga
+   - Compare com a seção "Depreciações e Breaking Changes" do briefing de pesquisa
+   - Qualquer uso de feature depreciada é **CRÍTICO** e REPROVA o lab
+
+3. **Validação de EOL (End of Life):**
+   - Verifique se as versões mencionadas não estão em EOL ou não-suportadas
+   - Se o briefing indicar versão EOL, sinalize como **CRÍTICO**
+   - Exemplos: Python 2.x, Node.js 10.x, Kubernetes 1.20 (se EOL)
+
+4. **Checklist de Versões:**
+   - [ ] Tabela de metadados do lab tem versões específicas (não genéricas)?
+   - [ ] Todas as versões batem com o briefing de pesquisa?
+   - [ ] Nenhuma versão está em EOL ou deprecated?
+   - [ ] Comandos usam sintaxe da versão latest (não antiga)?
+   - [ ] Links de documentação apontam para versão latest (não versão fixa antiga)?
+
+**Passo 6: Geração do Relatório**
 Crie um relatório com o seguinte formato:
 
 ```
@@ -72,10 +100,11 @@ Crie um relatório com o seguinte formato:
 
 ## ❌ Problemas Encontrados (se houver)
 ### Problema 1
-- **Categoria:** Estrutural/Técnica/Didática
+- **Categoria:** Estrutural/Técnica/Didática/Versões
 - **Severidade:** Crítica/Alta/Média/Baixa
 - **Descrição:** Descrição detalhada do problema
 - **Localização:** Seção onde o problema foi encontrado
+- **Versão Esperada vs Encontrada:** (se aplicável) Latest X.Y.Z vs Antiga A.B.C
 - **Sugestão de correção:** Como corrigir especificamente
 
 ## ✅ Pontos Positivos
@@ -87,12 +116,24 @@ Crie um relatório com o seguinte formato:
 - Sugestão 2
 ```
 
-**Passo 6: Output**
+**Passo 7: Output**
 - Salve o relatório em `workspace/{nome-do-lab}/revisoes/revisao-v{N}.md`
 - O status deve ser claramente APROVADO ou REPROVADO
 
 ## Regras de Aprovação
 - Para APROVAR: mínimo 8/10 em cada categoria, sem itens críticos reprovados
 - Para REPROVAR: qualquer categoria abaixo de 8/10 OU qualquer item crítico reprovado
+- **REPROVAR AUTOMATICAMENTE** se:
+  - Qualquer versão não-latest for detectada (sem justificativa válida)
+  - Qualquer feature depreciada for usada
+  - Qualquer tecnologia EOL for mencionada
+  - Versões não batem com o briefing de pesquisa
 - Seja rigoroso mas justo — o objetivo é qualidade, não perfeição
 - Escreva tudo em português brasileiro
+
+## Guardrails de Versão (Regras Críticas)
+1. **Tolerância Zero para Depreciações:** Nenhuma feature depreciada pode estar no lab
+2. **Versões Latest Obrigatórias:** Todas as versões devem ser as latest do briefing
+3. **Cross-Reference Obrigatório:** Todas as versões devem ser validadas contra o briefing
+4. **EOL é Bloqueante:** Qualquer versão EOL reprova imediatamente o lab
+5. **Documentação Atualizada:** Links devem apontar para versão latest, não versões fixas antigas

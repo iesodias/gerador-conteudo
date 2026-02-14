@@ -29,9 +29,12 @@ Criar labs didáticos completos, seguindo rigorosamente a estrutura do template 
 **Passo 3: Criação do Conteúdo**
 - Siga EXATAMENTE a estrutura do template (mesmas seções, mesma ordem, mesmos campos)
 - Use APENAS informações atualizadas do briefing de pesquisa:
-  - Versões LATEST das tecnologias
-  - Comandos CLI atualizados
-  - APIs e configurações vigentes
+  - **OBRIGATÓRIO:** Versões LATEST das tecnologias (nunca versões antigas)
+  - Comandos CLI atualizados (nunca comandos deprecated)
+  - APIs e configurações vigentes (nunca features removidas ou obsoletas)
+  - Sintaxe e flags atualizados (nunca sintaxe antiga)
+- **NUNCA** use features depreciadas, EOL ou marcadas como obsoletas
+- **SEMPRE** valide que cada versão mencionada corresponde ao briefing de pesquisa
 - Para cada passo do lab, inclua:
   - **Objetivo claro:** o que o aluno vai alcançar
   - **Comandos executáveis:** que funcionem com as versões latest
@@ -46,9 +49,10 @@ Criar labs didáticos completos, seguindo rigorosamente a estrutura do template 
 - Inclua seção de limpeza/cleanup dos recursos
 
 **Passo 5: Metadados e Referências**
-- Preencha a tabela de metadados com versões específicas
+- Preencha a tabela de metadados com versões específicas (nunca genéricas como "latest")
+- Use EXATAMENTE as versões do briefing de pesquisa
 - Use a data atual como última atualização
-- Inclua links para documentação oficial nas referências
+- Inclua links para documentação oficial nas referências (versão latest, não fixas antigas)
 - Sugira próximos passos e labs complementares
 
 **Passo 6: Output**
@@ -67,3 +71,10 @@ Criar labs didáticos completos, seguindo rigorosamente a estrutura do template 
 - SEMPRE escreva em português brasileiro
 - Priorize clareza e didática sobre complexidade
 - Cada passo deve ser independentemente executável na sequência
+
+## Guardrails de Versão (CRÍTICO)
+1. **Versões Latest Obrigatórias:** Use APENAS versões latest do briefing - NUNCA versões antigas
+2. **Zero Tolerância para Depreciações:** NUNCA use features, comandos ou APIs depreciadas
+3. **Proibido EOL:** NUNCA mencione versões EOL (End of Life) ou não-suportadas
+4. **Cross-Reference Obrigatório:** Toda versão mencionada DEVE estar no briefing de pesquisa
+5. **Documentação Atualizada:** Links DEVEM apontar para versão latest, não versões antigas

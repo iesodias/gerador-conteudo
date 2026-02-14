@@ -283,29 +283,30 @@ workspace/templates/lab-template.md
 
 ### Diretrizes para Customização
 
-1. **Mantenha a estrutura de seções**: O Leitor de Template identifica seções por headers `##`
-2. **Use placeholders entre chaves**: `{Nome do Campo}` para identificar campos a preencher
-3. **Inclua formatação esperada**: Tabelas, checklists, blocos de código
-4. **Adicione emojis consistentes**: Para facilitar identificação visual
-5. **Documente campos obrigatórios**: Seja claro sobre o que é obrigatório
+O template padrão define o formato que **TODOS os labs devem seguir**. Os agentes do sistema leem e validam os labs contra este template. As regras principais são:
 
-### Exemplo de Seção Customizada
+1. **Passos**: 5 a 12 por lab, numerados, separados por `---`
+2. **Código**: sempre completo, com linguagem correta no fence (bash/yaml/hcl/python/json)
+3. **Placeholders**: usar `<VALOR>` para dados que o aluno substitui
+4. **Cada lab é independente** — pode ser executado isoladamente
+5. **Progressão**: Lab 01 = setup → Labs intermediários = conceitos → Labs finais = cenários avançados
+6. **Limpeza obrigatória** ao final de cada lab
 
-````markdown
-## Segurança
+### Estrutura do Template
 
-### Configuração de Políticas
+Cada lab gerado segue a estrutura:
 
-| Política | Valor Recomendado | Justificativa |
-|----------|-------------------|---------------|
-| {Política 1} | {Valor} | {Justificativa} |
-| {Política 2} | {Valor} | {Justificativa} |
-
-**Comandos:**
-```bash
-{Comandos de configuração de segurança}
 ```
-````
+# Lab XX – [Verbo + o que será feito]
+## Objetivo              → 3 a 6 bullets com verbos no infinitivo
+## Pré-requisitos        → Ferramentas + comandos de instalação (se Lab 01)
+## Estrutura de Diretórios → Árvore de arquivos (se aplicável)
+## Passo a Passo         → Passos numerados com comandos e saídas esperadas
+## Resultado Esperado    → 3 a 5 resultados concretos e verificáveis
+## Dicas para Discussão  → Tabela de conceitos (opcional)
+```
+
+> O último passo do "Passo a Passo" é **sempre** a limpeza dos recursos criados no lab.
 
 ---
 

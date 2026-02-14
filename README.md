@@ -291,7 +291,7 @@ workspace/templates/lab-template.md
 
 ### Exemplo de Seção Customizada
 
-```markdown
+````markdown
 ## Segurança
 
 ### Configuração de Políticas
@@ -305,7 +305,7 @@ workspace/templates/lab-template.md
 ```bash
 {Comandos de configuração de segurança}
 ```
-```
+````
 
 ---
 

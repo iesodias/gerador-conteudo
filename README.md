@@ -1,4 +1,4 @@
-# 🤖 Gerador de Conteúdo - Labs Didáticos de DevOps e Engenharia de Plataforma
+# Gerador de Conteúdo - Labs Didáticos de DevOps e Engenharia de Plataforma
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub Copilot](https://img.shields.io/badge/GitHub-Copilot-blue.svg)](https://github.com/features/copilot)
@@ -7,52 +7,52 @@ Sistema completo de multi-agentes para GitHub Copilot que gera **labs didáticos
 
 ---
 
-## 📋 Índice
+## Índice
 
-- [Visão Geral](#-visão-geral)
-- [Arquitetura do Sistema](#-arquitetura-do-sistema)
-- [Agentes do Sistema](#-agentes-do-sistema)
-- [Estrutura de Diretórios](#-estrutura-de-diretórios)
-- [Como Usar](#-como-usar)
-- [Como Funciona o Workflow](#-como-funciona-o-workflow)
-- [Customização de Templates](#-customização-de-templates)
-- [Exemplos de Temas](#-exemplos-de-temas)
-- [Troubleshooting](#-troubleshooting)
-- [Contribuição](#-contribuição)
-- [Licença](#-licença)
+- [Visão Geral](#visão-geral)
+- [Arquitetura do Sistema](#arquitetura-do-sistema)
+- [Agentes do Sistema](#agentes-do-sistema)
+- [Estrutura de Diretórios](#estrutura-de-diretórios)
+- [Como Usar](#como-usar)
+- [Como Funciona o Workflow](#como-funciona-o-workflow)
+- [Customização de Templates](#customização-de-templates)
+- [Exemplos de Temas](#exemplos-de-temas)
+- [Troubleshooting](#troubleshooting)
+- [Contribuição](#contribuição)
+- [Licença](#licença)
 
 ---
 
-## 🎯 Visão Geral
+## Visão Geral
 
 Este projeto utiliza a tecnologia de agentes do GitHub Copilot para automatizar a criação de laboratórios didáticos. O sistema garante que todo o conteúdo gerado:
 
-- ✅ Utiliza **versões LATEST** das tecnologias
-- ✅ Segue uma **estrutura padronizada** e profissional
-- ✅ Possui **comandos atualizados** e testáveis
-- ✅ Inclui **explicações didáticas** claras
-- ✅ Passa por **revisão automatizada** de qualidade
-- ✅ Usa apenas **fontes oficiais** e verificadas
+- Utiliza **versões LATEST** das tecnologias
+- Segue uma **estrutura padronizada** e profissional
+- Possui **comandos atualizados** e testáveis
+- Inclui **explicações didáticas** claras
+- Passa por **revisão automatizada** de qualidade
+- Usa apenas **fontes oficiais** e verificadas
 
 ---
 
-## 🏗️ Arquitetura do Sistema
+## Arquitetura do Sistema
 
 ```mermaid
 graph TD
-    User[👤 Usuário] -->|Solicita Lab| Orch[🎯 Orquestrador de Labs]
-    Orch -->|1. Lê Template| Reader[📖 Leitor de Template]
-    Orch -->|2. Pesquisa Docs| Researcher[🔍 Pesquisador de Docs]
-    Orch -->|3. Gera Conteúdo| Generator[✍️ Gerador de Lab]
-    Orch -->|4. Revisa| Reviewer[👨‍⚖️ Revisor de Lab]
+    User[Usuário] -->|Solicita Lab| Orch[Orquestrador de Labs]
+    Orch -->|1. Lê Template| Reader[Leitor de Template]
+    Orch -->|2. Pesquisa Docs| Researcher[Pesquisador de Docs]
+    Orch -->|3. Gera Conteúdo| Generator[Gerador de Lab]
+    Orch -->|4. Revisa| Reviewer[Revisor de Lab]
     
-    Reader -->|Estrutura| Research[(📁 Pesquisa)]
+    Reader -->|Estrutura| Research[(Pesquisa)]
     Researcher -->|Briefing| Research
-    Generator -->|Lab v1| Drafts[(📝 Rascunhos)]
-    Reviewer -->|Relatório| Reviews[(📊 Revisões)]
+    Generator -->|Lab v1| Drafts[(Rascunhos)]
+    Reviewer -->|Relatório| Reviews[(Revisões)]
     
-    Reviewer -->|❌ Reprovado| Generator
-    Reviewer -->|✅ Aprovado| Output[(📄 Output Final)]
+    Reviewer -->|Reprovado| Generator
+    Reviewer -->|Aprovado| Output[(Output Final)]
     
     Generator -.->|Máx 3 ciclos| Reviewer
     
@@ -73,19 +73,19 @@ graph TD
 
 ---
 
-## 🤖 Agentes do Sistema
+## Agentes do Sistema
 
 | Agente | Papel | Model | Tools | Invocável |
 |--------|-------|-------|-------|-----------|
-| **🎯 Orquestrador de Labs** | Coordena todo o workflow e gerencia os agentes | Default | agent, read, edit | ✅ Sim |
-| **📖 Leitor de Template** | Analisa e interpreta templates de labs | Default | read | ❌ Não |
-| **🔍 Pesquisador de Docs** | Busca informações técnicas atualizadas | Sonnet 4.5 | read, search, fetch | ❌ Não |
-| **✍️ Gerador de Lab** | Cria o conteúdo didático do lab | Opus 4.6 | read, edit | ❌ Não |
-| **👨‍⚖️ Revisor de Lab** | Valida qualidade e conformidade | Sonnet 4.5 | read | ❌ Não |
+| **Orquestrador de Labs** | Coordena todo o workflow e gerencia os agentes | Default | agent, read, edit | Sim |
+| **Leitor de Template** | Analisa e interpreta templates de labs | Default | read | Não |
+| **Pesquisador de Docs** | Busca informações técnicas atualizadas | Sonnet 4.5 | read, search, fetch | Não |
+| **Gerador de Lab** | Cria o conteúdo didático do lab | Opus 4.6 | read, edit | Não |
+| **Revisor de Lab** | Valida qualidade e conformidade | Sonnet 4.5 | read | Não |
 
 ### Descrição Detalhada dos Agentes
 
-#### 🎯 Orquestrador de Labs
+#### Orquestrador de Labs
 - **Responsabilidade**: Gerenciar todo o ciclo de vida da geração do lab
 - **Funções**:
   - Receber tema do usuário
@@ -95,7 +95,7 @@ graph TD
   - Entregar resultado final
 - **Como invocar**: `@orquestrador-de-labs Crie um lab sobre {tema}`
 
-#### 📖 Leitor de Template
+#### Leitor de Template
 - **Responsabilidade**: Interpretar a estrutura dos templates
 - **Funções**:
   - Ler arquivos de template em `workspace/templates/`
@@ -103,7 +103,7 @@ graph TD
   - Extrair campos e formatação esperada
   - Gerar resumo estruturado da template
 
-#### 🔍 Pesquisador de Docs
+#### Pesquisador de Docs
 - **Responsabilidade**: Garantir informações técnicas atualizadas
 - **Funções**:
   - Identificar tecnologias do tema
@@ -111,7 +111,7 @@ graph TD
   - Extrair comandos, APIs e configurações atualizadas
   - Compilar briefing de pesquisa com referências
 
-#### ✍️ Gerador de Lab
+#### Gerador de Lab
 - **Responsabilidade**: Criar o conteúdo didático de qualidade
 - **Funções**:
   - Seguir estrutura exata do template
@@ -120,7 +120,7 @@ graph TD
   - Incluir explicações, comandos e resultados esperados
   - Gerar versões incrementais em caso de feedback
 
-#### 👨‍⚖️ Revisor de Lab
+#### Revisor de Lab
 - **Responsabilidade**: Garantir qualidade final do lab
 - **Funções**:
   - Validar conformidade estrutural (100% do template)
@@ -131,7 +131,7 @@ graph TD
 
 ---
 
-## 📁 Estrutura de Diretórios
+## Estrutura de Diretórios
 
 ```
 gerador-conteudo/
@@ -184,7 +184,7 @@ gerador-conteudo/
 
 ---
 
-## 🚀 Como Usar
+## Como Usar
 
 ### Pré-requisitos
 
@@ -214,11 +214,11 @@ gerador-conteudo/
 
    Ao final, você receberá:
    ```
-   ✅ Lab finalizado com sucesso!
-   📄 Lab: workspace/{nome-do-lab}/output/lab-final.md
-   📊 Relatório de revisão: workspace/{nome-do-lab}/revisoes/revisao-v{N}.md
-   📋 Pesquisa: workspace/{nome-do-lab}/pesquisa/briefing-pesquisa.md
-   🔄 Ciclos de revisão: {N}
+    Lab finalizado com sucesso!
+    Lab: workspace/{nome-do-lab}/output/lab-final.md
+    Relatório de revisão: workspace/{nome-do-lab}/revisoes/revisao-v{N}.md
+    Pesquisa: workspace/{nome-do-lab}/pesquisa/briefing-pesquisa.md
+    Ciclos de revisão: {N}
    ```
 
 4. **Revise e Use o Lab**
@@ -229,7 +229,7 @@ gerador-conteudo/
 
 ---
 
-## 🔄 Como Funciona o Workflow
+## Como Funciona o Workflow
 
 ### Fase 1: Preparação (Orquestrador)
 1. Recebe tema do usuário
@@ -273,7 +273,7 @@ gerador-conteudo/
 
 ---
 
-## 🎨 Customização de Templates
+## Customização de Templates
 
 Você pode customizar os templates de labs editando o arquivo:
 
@@ -292,7 +292,7 @@ workspace/templates/lab-template.md
 ### Exemplo de Seção Customizada
 
 ```markdown
-## 🔐 Segurança
+## Segurança
 
 ### Configuração de Políticas
 
@@ -309,7 +309,7 @@ workspace/templates/lab-template.md
 
 ---
 
-## 💡 Exemplos de Temas
+## Exemplos de Temas
 
 ### Kubernetes
 - Kubernetes HPA com métricas customizadas
@@ -362,7 +362,7 @@ workspace/templates/lab-template.md
 
 ---
 
-## 🔍 Troubleshooting
+## Troubleshooting
 
 ### Problema: Agente não responde
 
@@ -414,7 +414,7 @@ workspace/templates/lab-template.md
 
 ---
 
-## 🤝 Contribuição
+## Contribuição
 
 Contribuições são bem-vindas! Para contribuir:
 
@@ -426,12 +426,12 @@ Contribuições são bem-vindas! Para contribuir:
 
 ### Áreas de Contribuição
 
-- 📝 Novos templates de labs
-- 🤖 Melhorias nos agentes existentes
-- 🐛 Correção de bugs
-- 📚 Documentação adicional
-- 🧪 Exemplos de labs gerados
-- 🌐 Traduções
+- Novos templates de labs
+- Melhorias nos agentes existentes
+- Correção de bugs
+- Documentação adicional
+- Exemplos de labs gerados
+- Traduções
 
 ### Diretrizes
 
@@ -442,7 +442,7 @@ Contribuições são bem-vindas! Para contribuir:
 
 ---
 
-## 📄 Licença
+## Licença
 
 Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
@@ -472,7 +472,7 @@ SOFTWARE.
 
 ---
 
-## 🙏 Agradecimentos
+## Agradecimentos
 
 - GitHub Copilot pela plataforma de agentes
 - Comunidade DevOps e Platform Engineering
@@ -480,7 +480,7 @@ SOFTWARE.
 
 ---
 
-## 📞 Contato
+## Contato
 
 Para dúvidas, sugestões ou feedback:
 
@@ -489,6 +489,6 @@ Para dúvidas, sugestões ou feedback:
 
 ---
 
-**Desenvolvido com ❤️ para a comunidade DevOps e Platform Engineering**
+**Desenvolvido para a comunidade DevOps e Platform Engineering**
 
-**⭐ Se este projeto foi útil para você, considere dar uma estrela!**
+**Se este projeto foi útil para você, considere dar uma estrela!**

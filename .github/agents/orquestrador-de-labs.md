@@ -18,10 +18,11 @@ The user invokes you with a topic. Example: @orquestrador-de-labs Crie um lab so
 
 ## Complete Workflow
 
-Step 0: Git Workflow Setup
+<!-- Step 0: Git Workflow Setup [DESABILITADO]
 - Derive a short, slug-friendly name for the lab (e.g., kubernetes-hpa-custom-metrics)
 - Create a new branch with the pattern lab/{lab-name} from the main branch
 - Confirm that the branch was created successfully
+-->
 
 Step 1: Receive the Topic
 - Receive the lab topic from the user
@@ -62,7 +63,12 @@ Step 7: Review Cycle (if needed)
 - MAXIMUM 3 review cycles
 - If not approved after 3 cycles, use the best available version and add a warning note
 
-Step 8: Final Delivery and Pull Request
+Step 8: Final Delivery
+- When APPROVED (or after 3 cycles):
+  - Copy the final lab to workspace/{lab-name}/output/lab-final.md
+  - Notify the user with complete summary including status, generated files, technologies, and metrics
+
+<!-- Step 8 ORIGINAL (Git/PR): Final Delivery and Pull Request [DESABILITADO]
 - When APPROVED (or after 3 cycles):
   - Copy the final lab to workspace/{lab-name}/output/lab-final.md
   - Commit all files in workspace/{lab-name}/ with structured message including status and review cycles
@@ -72,6 +78,7 @@ Step 8: Final Delivery and Pull Request
   - Complete description including objective, status, generated files, technologies, and metrics
   - Appropriate labels based on review status
   - Notify the user with PR link and complete summary
+-->
 
 ## Rules
 - ALWAYS follow the order of steps

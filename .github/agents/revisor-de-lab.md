@@ -131,7 +131,6 @@ Create a report with the following format:
   - Any EOL technology is mentioned
   - Versions do not match the research briefing
 - Be rigorous but fair — the goal is quality, not perfection
-- Write everything in Brazilian Portuguese (PT-BR)
 
 ## Version Guardrails (Critical Rules)
 1. **Zero Tolerance for Deprecations:** No deprecated feature can be in the lab

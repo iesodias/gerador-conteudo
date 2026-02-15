@@ -88,7 +88,6 @@ Research official documentation and reliable sources about the lab topic to ensu
 - NEVER use information from unverified sources, personal blogs, or outdated tutorials
 - ALWAYS include the research date and found versions
 - If you cannot confirm a version, clearly flag it
-- Write everything in Brazilian Portuguese (PT-BR)
 
 ## Version Guardrails (CRITICAL)
 1. **Latest Versions Only:** Research ONLY the most recent latest/stable versions

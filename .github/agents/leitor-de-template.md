@@ -40,7 +40,6 @@ Read and interpret the templates located in the `workspace/templates/` directory
 - NEVER alter the original template
 - ALWAYS preserve the exact order of sections
 - Be precise in identifying mandatory fields
-- Write everything in Brazilian Portuguese (PT-BR)
 
 ## Output Language
 - **IMPORTANT:** All generated content, summaries, and outputs MUST be written in Brazilian Portuguese (PT-BR)

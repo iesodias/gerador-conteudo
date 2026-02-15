@@ -69,7 +69,6 @@ Create complete didactic labs, strictly following the template structure and usi
 ## Rules
 - NEVER invent versions or commands — use only what is in the briefing
 - ALWAYS follow the exact template structure
-- ALWAYS write in Brazilian Portuguese (PT-BR)
 - Prioritize clarity and didactics over complexity
 - Each step must be independently executable in sequence
 

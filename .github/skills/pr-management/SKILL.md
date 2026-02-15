@@ -43,42 +43,34 @@ When lab generation is complete and ready for PR:
 [Lab] {nome-do-lab}
 ```
 
-Examples:
-- `[Lab] kubernetes-hpa-metricas-custom`
-- `[Lab] terraform-aws-vpc-avancada`
+Usar kebab-case para o nome do lab (ex: kubernetes-hpa, terraform-vpc).
 
 ## PR Description Template
 
 ````markdown
-# 📚 Lab: {Nome do Lab}
+# 📚 Lab: {Extrair título do lab-final.md (primeira linha # do arquivo)}
 
 ## 🎯 Objetivo
-{Breve descrição do objetivo do lab extraída do conteúdo}
+{Extrair objetivo do conteúdo do lab - não usar exemplo fixo}
 
 ## 📊 Status da Revisão
-- **Status Final:** ✅ APROVADO / ⚠️ APROVADO COM RESSALVAS / ❌ PENDENTE
-- **Ciclos de Revisão:** {N}
-- **Pontuação Final:** {X}/30
+- **Status Final:** {Extrair do arquivo de revisão: APROVADO/APROVADO COM RESSALVAS/PENDENTE}
+- **Ciclos de Revisão:** {Contar número de arquivos revisao-vN.md}
+- **Pontuação Final:** {Extrair nota do último arquivo de revisão}/10
 
 ## 📁 Arquivos Gerados
 
-### Pesquisa
-- 📋 [Briefing de Pesquisa](workspace/{nome-do-lab}/pesquisa/briefing-pesquisa.md)
-- 🏗️ [Estrutura do Template](workspace/{nome-do-lab}/pesquisa/estrutura-template.md)
+**INSTRUÇÃO IMPORTANTE:** 
+1. Liste o conteúdo do diretório workspace/[nome-do-lab]/ recursivamente
+2. Organize os arquivos por subdiretório (pesquisa/, rascunhos/, revisoes/, output/)
+3. Crie links markdown SOMENTE para arquivos que realmente existem
+4. Use ícones apropriados (📋 📝 🔍 ✅)
+5. Não inclua arquivos que não existem
 
-### Rascunhos
-- 📝 [Lab v1](workspace/{nome-do-lab}/rascunhos/lab-v1.md)
-- 📝 [Lab v2](workspace/{nome-do-lab}/rascunhos/lab-v2.md) _(se aplicável)_
-
-### Revisões
-- 🔍 [Revisão v1](workspace/{nome-do-lab}/revisoes/revisao-v1.md)
-- 🔍 [Revisão v{N}](workspace/{nome-do-lab}/revisoes/revisao-v{N}.md)
-
-### Output Final
-- ✅ [Lab Final](workspace/{nome-do-lab}/output/lab-final.md)
+**Formato sugerido:** `- [ícone] [nome-arquivo.md](caminho/relativo/completo)`
 
 ## 🔧 Tecnologias e Versões
-{Extrair da tabela de metadados do lab}
+{Extrair do conteúdo do lab - buscar seção de tecnologias ou metadados se existir}
 
 ## 📝 Próximos Passos
 - [ ] Revisar conteúdo final
@@ -88,7 +80,7 @@ Examples:
 
 ## 🤖 Gerado por
 - **Agente:** @orquestrador-de-labs
-- **Data:** {data atual}
+- **Data:** {usar data atual no formato DD/MM/YYYY}
 - **Workflow:** Pesquisa → Geração → Revisão → Entrega
 
 ---
@@ -110,7 +102,7 @@ Add labels automatically based on status:
 - `🎓 beginner` / `🎓 intermediate` / `🎓 advanced` - Based on lab level
 
 **Technology Labels:**
-- Extract from lab metadata (e.g., `kubernetes`, `terraform`, `aws`)
+- Extract from lab metadata or content (dynamic based on lab topic)
 
 ## Error Handling
 
@@ -123,12 +115,14 @@ Add labels automatically based on status:
 
 **Creating PR:**
 ```
-Title: [Lab] kubernetes-hpa-metricas-custom
+Title: [Lab] {nome-do-lab}
 Base: main
-Head: lab/kubernetes-hpa-metricas-custom
-Labels: lab, approved, kubernetes, intermediate
+Head: lab/{nome-do-lab}
+Labels: lab, approved, {technology}, {level}
 Draft: false
 ```
+
+Substituir {nome-do-lab}, {technology} e {level} pelos valores reais do contexto.
 
 ## Guardrails
 

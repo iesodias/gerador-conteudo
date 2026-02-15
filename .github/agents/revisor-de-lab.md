@@ -43,9 +43,11 @@ Verifique cada item:
 
 **Passo 4: Validação Didática**
 Verifique cada item:
+- [ ] **O lab é DIRETO?** Está focado na prática e execução, sem explicações excessivas ou longas digressões teóricas?
+- [ ] As notas explicativas são concisas e úteis?
 - [ ] O objetivo do lab está claro e bem definido?
 - [ ] Os pré-requisitos estão completos e realistas?
-- [ ] A explicação dos conceitos fundamentais é adequada ao nível indicado?
+- [ ] A explicação dos conceitos fundamentais é adequada ao nível indicado (breve e objetiva)?
 - [ ] Os passos seguem uma progressão lógica (simples → complexo)?
 - [ ] Cada passo tem: objetivo, comandos, explicação e resultado esperado?
 - [ ] A seção de troubleshooting cobre problemas comuns reais?

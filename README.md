@@ -98,7 +98,7 @@ graph TD
 #### Leitor de Template
 - **Responsabilidade**: Interpretar a estrutura dos templates
 - **Funções**:
-  - Ler arquivos de template em `workspace/templates/`
+  - Ler arquivos de template em `template/`
   - Identificar seções obrigatórias e ordem
   - Extrair campos e formatação esperada
   - Gerar resumo estruturado da template
@@ -144,11 +144,11 @@ gerador-conteudo/
 │       ├── revisor-de-lab.md            # Agente: Revisor de Lab
 │       └── orquestrador-de-labs.md      # Agente: Orquestrador (user-invokable)
 │
+├── template/                            # Templates de labs (na raiz)
+│   └── lab-template.md                  # Template padrão de lab
+│
 ├── workspace/                           # Workspace de trabalho
 │   ├── .gitkeep                         # Mantém diretório no git
-│   │
-│   ├── templates/                       # Templates de labs
-│   │   └── lab-template.md              # Template padrão de lab
 │   │
 │   └── {nome-do-lab}/                   # Diretório por lab (criado dinamicamente)
 │       ├── pesquisa/                    # Fase de pesquisa
@@ -175,7 +175,7 @@ gerador-conteudo/
 ### Organização dos Diretórios
 
 - **`.github/agents/`**: Contém as definições dos 5 agentes especializados
-- **`workspace/templates/`**: Armazena templates de labs
+- **`template/`**: Armazena templates de labs (na raiz do repositório)
 - **`workspace/{nome-do-lab}/`**: Diretório isolado criado para cada lab gerado
   - **`pesquisa/`**: Artefatos da fase de pesquisa
   - **`rascunhos/`**: Versões iterativas do lab
@@ -237,7 +237,7 @@ gerador-conteudo/
 3. Cria estrutura de diretórios
 
 ### Fase 2: Análise do Template (Leitor)
-1. Lê `workspace/templates/lab-template.md`
+1. Lê `template/lab-template.md`
 2. Identifica seções, hierarquia e campos obrigatórios
 3. Gera `estrutura-template.md`
 
@@ -278,7 +278,7 @@ gerador-conteudo/
 Você pode customizar os templates de labs editando o arquivo:
 
 ```
-workspace/templates/lab-template.md
+template/lab-template.md
 ```
 
 ### Diretrizes para Customização
@@ -380,7 +380,7 @@ Cada lab gerado segue a estrutura:
 **Causa**: Estrutura de diretórios incorreta
 
 **Solução**:
-1. Verifique se `workspace/templates/lab-template.md` existe
+1. Verifique se `template/lab-template.md` existe
 2. Confirme que o caminho está correto
 3. Execute `git status` para verificar arquivos rastreados
 

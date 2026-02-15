@@ -32,7 +32,7 @@ Step 2: Prepare Directory Structure
 
 Step 3: Template Reading
 - Call the leitor-de-template agent
-- Instruct it to read the templates in workspace/templates/
+- Instruct it to read the templates in template/
 - It will save the structure to workspace/{lab-name}/pesquisa/estrutura-template.md
 
 Step 4: Documentation Research

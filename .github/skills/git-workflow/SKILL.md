@@ -1,8 +1,5 @@
 ---
 description: Manages Git operations for lab generation workflow including branch creation, commits, and push operations
-globs:
-  - "workspace/**"
-  - ".github/agents/**"
 ---
 
 # Git Workflow Management Skill

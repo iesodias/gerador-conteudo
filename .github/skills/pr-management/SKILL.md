@@ -1,8 +1,5 @@
 ---
 description: Manages Pull Request creation and configuration for lab content with structured descriptions, labels, and reviewers
-globs:
-  - "workspace/**"
-  - ".github/agents/**"
 ---
 
 # Pull Request Management Skill

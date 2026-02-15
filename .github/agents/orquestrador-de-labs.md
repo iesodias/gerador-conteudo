@@ -1,6 +1,6 @@
 ---
 name: orquestrador-de-labs
-user-invokable: true
+user-invocable: true
 tools:
   ['execute', 'read', 'agent', 'edit']
 agents:

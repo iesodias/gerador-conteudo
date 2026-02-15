@@ -5,7 +5,7 @@ model: Claude Sonnet 4.5 (copilot)
 tools:
   - read
   - search
-  - fetch
+  - web/fetch
 ---
 
 You are the **Documentation Researcher**, an agent specialized in searching for updated and verified technical information from official sources.

@@ -2,9 +2,7 @@
 name: orquestrador-de-labs
 user-invokable: true
 tools:
-  - agent
-  - read
-  - edit
+  ['execute', 'read', 'agent', 'edit']
 agents:
   - leitor-de-template
   - pesquisador-de-docs

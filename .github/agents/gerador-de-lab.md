@@ -42,9 +42,10 @@ Criar labs didáticos completos, seguindo rigorosamente a estrutura do template 
   - **Resultado esperado:** output que o aluno deve ver
 
 **Passo 4: Qualidade Didática**
+- **Seja DIRETO:** O lab deve ir direto ao ponto, sem rodeios ou explicações excessivas. O foco é a prática e a execução dos comandos, não a teoria. As notas explicativas devem ser concisas e úteis, evitando longas digressões.
 - Use linguagem clara e acessível
-- Explique conceitos antes de usá-los
-- Adicione dicas e notas quando relevante
+- Explique conceitos antes de usá-los (de forma breve e objetiva)
+- Adicione dicas e notas quando relevante (mantendo-as concisas)
 - Crie um troubleshooting útil com problemas reais
 - Inclua seção de limpeza/cleanup dos recursos
 

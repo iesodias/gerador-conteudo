@@ -57,8 +57,9 @@ Create complete didactic labs, strictly following the template structure and usi
 - Suggest next steps and complementary labs
 
 **Step 6: Output**
-- Save the lab to `workspace/{lab-name}/rascunhos/lab-v{N}.md`
-  - Where `{N}` is the version/iteration number (1, 2, 3...)
+- **RETURN** the complete lab content in Markdown format
+- Include metadata about which version/iteration this is (v1, v2, v3...)
+- The orchestrator agent will save the content to workspace/{lab-name}/rascunhos/lab-v{N}.md
 
 ## Handling Review Feedback
 - If you receive feedback from the reviewer, read the review report

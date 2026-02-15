@@ -34,7 +34,9 @@ Read and interpret the templates located in the `template/` directory and genera
   - Observations about identified patterns
 
 **Step 4: Output**
-- Write the summary to `workspace/{lab-name}/pesquisa/estrutura-template.md`
+- **RETURN** the complete structured summary in Markdown format
+- **DO NOT** save files yourself (you don't have write permissions)
+- The orchestrator agent will save the summary to the correct location
 
 ## Rules
 - NEVER alter the original template

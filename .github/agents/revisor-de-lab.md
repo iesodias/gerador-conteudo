@@ -119,8 +119,9 @@ Create a report with the following format:
 ```
 
 **Step 7: Output**
-- Save the report to `workspace/{lab-name}/revisoes/revisao-v{N}.md`
-- The status must be clearly APPROVED or REJECTED
+- **RETURN** the complete review report in Markdown format
+- Include clear APPROVED or REJECTED status at the beginning
+- The orchestrator agent will save the report to workspace/{lab-name}/revisoes/revisao-v{N}.md
 
 ## Approval Rules
 - To APPROVE: minimum 8/10 in each category, without critical items rejected

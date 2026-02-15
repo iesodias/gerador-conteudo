@@ -31,29 +31,36 @@ Step 2: Prepare Directory Structure
 - Create the following directory structure: workspace/{lab-name}/ with subdirectories pesquisa/, rascunhos/, revisoes/, output/
 
 Step 3: Template Reading
-- Call the leitor-de-template agent
-- Instruct it to read the templates in template/
-- It will save the structure to workspace/{lab-name}/pesquisa/estrutura-template.md
+- Call the leitor-de-template agent to read templates from template/
+- The agent will RETURN the template structure content (it cannot write files)
+- YOU (orchestrator) must save the returned content to workspace/{lab-name}/pesquisa/estrutura-template.md
 
 Step 4: Documentation Research
-- Call the pesquisador-de-docs agent
-- Pass the lab topic for research
-- It will save the briefing to workspace/{lab-name}/pesquisa/briefing-pesquisa.md
+- Call the pesquisador-de-docs agent with the lab topic
+- The agent will RETURN the briefing content (it cannot write files)
+- YOU (orchestrator) must save the returned content to workspace/{lab-name}/pesquisa/briefing-pesquisa.md
 
 Step 5: Lab Generation
-- Call the gerador-de-lab agent
-- It will read the template structure and research briefing
-- It will save the lab to workspace/{lab-name}/rascunhos/lab-v1.md
+- Call the gerador-de-lab agent with the lab topic
+- The agent will read the template structure and research briefing
+- The agent will RETURN the lab content (it cannot write files)
+- YOU (orchestrator) must save the returned content to workspace/{lab-name}/rascunhos/lab-v1.md
 
 Step 6: Lab Review
-- Call the revisor-de-lab agent
-- It will validate the lab against the template and briefing
-- It will save the report to workspace/{lab-name}/revisoes/revisao-v1.md
+- Call the revisor-de-lab agent with the lab path
+- The agent will RETURN the review report (it cannot write files)
+- YOU (orchestrator) must save the returned report to workspace/{lab-name}/revisoes/revisao-v1.md
+- Read the report status (APPROVED or REJECTED)
 
 Step 7: Review Cycle (if needed)
-- If the lab was REJECTED, read the review report, call the gerador-de-lab agent again passing the feedback, call the revisor-de-lab agent again to validate the new version
+- If the lab was REJECTED, read the review report carefully
+- Call the gerador-de-lab agent again passing the specific feedback
+- Increment version number (v2, v3, etc.)
+- YOU (orchestrator) must save the new lab version to workspace/{lab-name}/rascunhos/lab-vN.md
+- Call the revisor-de-lab agent again to validate the new version
+- YOU (orchestrator) must save the new review report
 - MAXIMUM 3 review cycles
-- If not approved after 3 cycles, use the best available version and add a warning note at the beginning of the lab about improvement points
+- If not approved after 3 cycles, use the best available version and add a warning note
 
 Step 8: Final Delivery and Pull Request
 - When APPROVED (or after 3 cycles):

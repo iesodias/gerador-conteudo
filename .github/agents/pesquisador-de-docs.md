@@ -81,7 +81,9 @@ Research official documentation and reliable sources about the lab topic to ensu
 ```
 
 **Step 5: Output**
-- Save the briefing to `workspace/{lab-name}/pesquisa/briefing-pesquisa.md`
+- **RETURN** the complete briefing content in Markdown format
+- **DO NOT** save files yourself (you don't have write permissions)
+- The orchestrator agent will save the briefing to the correct location
 
 ## Rules
 - ALWAYS prioritize official sources: official documentation, official GitHub repositories, official blogs

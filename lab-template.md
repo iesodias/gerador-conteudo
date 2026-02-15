@@ -53,8 +53,6 @@ Conteúdo:
 # conteúdo COMPLETO — nunca usar "..." ou omitir trechos
 ```
 
-> Nota: explicar conceitos-chave quando necessário
-
 ---
 
 ### 3. Aplicar/Executar
@@ -71,13 +69,6 @@ comando-principal
 comando-verificacao
 ```
 
-Saída esperada:
-
-```
-RECURSO    STATUS
-exemplo    Running
-```
-
 ---
 
 ### 5. Testar comportamento
@@ -85,8 +76,6 @@ exemplo    Running
 ```bash
 comando-teste
 ```
-
-> O que deve acontecer e por quê
 
 ---
 
@@ -97,22 +86,7 @@ comando-remover-tudo
 ```
 
 ---
-
-## Resultado Esperado
-
-* [3 a 5 resultados concretos e verificáveis]
-* Recursos removidos ao final
-
----
-
-## Dicas para Discussão (opcional)
-
-| Conceito | Descrição |
-|----------|-----------|
-| [A]      | [curto]   |
 ```
-
----
 
 ## REGRAS
 
@@ -121,4 +95,5 @@ comando-remover-tudo
 3. **Placeholders**: usar `<VALOR>` para dados que o aluno substitui
 4. **Cada lab é independente** — pode ser executado isoladamente
 5. **Progressão**: Lab 01 = setup → Labs intermediários = conceitos → Labs finais = cenários avançados
-6. **Limpeza obrigatória** ao final de cada lab
+6. **Os Labs devem ser DIRETOS**: O lab deve ser direto ao ponto, sem rodeios ou explicações excessivas. O foco é a prática e a execução dos comandos, não a teoria. As notas explicativas devem ser concisas e úteis, evitando longas digressões. 
+7. **Limpeza obrigatória** ao final de cada lab
